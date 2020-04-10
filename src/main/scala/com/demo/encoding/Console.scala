@@ -26,8 +26,8 @@ object ConsoleT {
 }
 
 // more generally
-trait Term[Alg[_[_]], A] {
-  def apply[F[_]](A: Alg[F]): F[A]
+trait Term[Alg[_[_]], +A] {
+  def apply[F[+_]](A: Alg[F]): F[A]
 }
 
 object Term {
